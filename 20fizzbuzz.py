@@ -14,6 +14,10 @@ for i in range(1,101) :
 	else:
 		print(i)
 
+a = 0
+for i in range(5) :
+	a += i * 2
+	print(a)
 """
 python3 20fizzbuzz.py
 1
