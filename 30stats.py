@@ -25,11 +25,15 @@ stdev = [(x - mean) ** 2 for x in numeros]#list comprehension
 varab = sum(stdev) / n
 sqt = varab**0.5
 print(f'Std.dev:{sqt}')
-midpoint= (n-1)//2
-if midpoint % 2:
-	print(numeros[midpoint]) 
-else:
+print(numeros)
+print(n % 2)
+if n % 2 == 0:
+	midpoint = int(n/2)
+	print(midpoint)
 	print(f'median:{numeros[midpoint] + numeros[midpoint + 1] / 2.0}')
+else:
+	midpoint = int(n/2)
+	print(f'median:{numeros[midpoint]}')
 """
 python3 30stats.py 3 1 4 1 5
 Count: 5
