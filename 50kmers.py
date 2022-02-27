@@ -7,9 +7,26 @@ import sys
 # Your program should take 2 arguments:
 #    1. The file name
 #    2. The size of k
+filename= sys.argv[1]
+def readfasta(filename):
+	records = []
+	seq =''
+	with open(filename) as fp:
+		for line in fp.readlines():
+			line = line.rstrip()
+			if len(line) ==0:continue
+			if line[0]== '>':
+				if seq != '':
+					records.append((id,seq))
+				words = line.split()
+				id = words [0][1:]
+				seq=''
+			else:
+				seq += line.upper()
+		records.append((id,seq))
+	return records
 
-
-k = 2
+k = int(sys.argv[2])
 
 count = {}
 tot= 0
